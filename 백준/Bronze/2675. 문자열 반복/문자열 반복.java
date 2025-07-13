@@ -7,14 +7,14 @@ public class Main{
         for(int i=0;i<T;i++){
             int repeat=input.nextInt();
             String S = input.next();
-             String P ="";
+            StringBuilder sb= new StringBuilder();
             for(int j=0;j<S.length();j++){
                 char ch=S.charAt(j);
                 for(int r=0;r<repeat;r++){
-                 P+=ch;
+                sb.append(ch);
                 }
             }
-            System.out.println(P);
+            System.out.println(sb);
         }
     }
 }
