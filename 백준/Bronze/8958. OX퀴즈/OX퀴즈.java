@@ -1,29 +1,28 @@
 import java.util.Scanner;
-class Main{
-    public static void main(String[]args){
-        Scanner input=new Scanner(System.in);
-        int n=input.nextInt();
-        int count=0;
-        int sum=0;
-        String Quiz;
-        for(int i=0;i<n;i++){
-            Quiz= input.next();
-            for(int j=0;j<Quiz.length();j++){
-                    if(Quiz.charAt(j)=='O'){
-                        sum+=++count;
-                     }else{
-                        count=0;
-                    }
-             }
-          System.out.println(sum);
-          sum=0;
-            count=0;
-                
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int T = input.nextInt();
+        String[] answer = new String[T];
+        int[] score = new int[T];
+
+        for (int i = 0; i < T; i++) {
+            answer[i] = input.next();
+            int current = 0;
+
+            for (int j = 0; j < answer[i].length(); j++) {
+                if (answer[i].charAt(j) == 'O') {
+                    current += 1;
+                    score[i] += current;
+                } else {
+                    current = 0;
+                }
+            }
+        }
+
+        for (int i = 0; i < T; i++) {
+            System.out.println(score[i]);
         }
     }
 }
-
-
-
-
-
