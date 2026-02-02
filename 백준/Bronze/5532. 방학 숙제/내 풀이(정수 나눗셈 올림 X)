@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    ios_base::sync_with_stdio(0); 
+    cin.tie(0);
+    int L,A,B,C,D;
+    cin>>L>>A>>B>>C>>D;
+   
+    int Kday = A / C;
+    if (A % C > 0) Kday++;
+
+    int Mday = B / D;
+    if (B % D > 0) Mday++;
+
+    cout << L - max(Kday, Mday);
+    return 0;
+}
