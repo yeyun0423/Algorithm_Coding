@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    vector <bool> numbers(31,false);
+    
+    for(int i=1;i<31;i++){
+        int n;
+        cin>>n;
+        numbers[n]=true;
+    }
+    
+    for(int i=1;i<31;i++){
+        if(!numbers[i]){
+            cout<<i<<'\n';
+        }
+    }
+    
+    return 0;
+}
