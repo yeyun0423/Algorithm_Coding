@@ -6,10 +6,10 @@ int main() {
     cin.tie(nullptr);
     int n;
     cin>>n;
+    vector<int>time(n);
     
-    vector<int> time(n);
-    for (int i = 0; i < n; i++) {
-        cin >> time[i];
+    for(int i=0;i<n;i++){
+        cin>>time[i];
     }
     
     sort(time.begin(),time.end());
@@ -18,11 +18,9 @@ int main() {
     int totalSum=0;
     
     for(int i=0;i<n;i++){
-        progressSum+=time[i];
-        totalSum +=progressSum;
+      progressSum+=time[i];
+      totalSum+=progressSum;
     }
-    
     cout<<totalSum;
-    
     return 0;
 }
