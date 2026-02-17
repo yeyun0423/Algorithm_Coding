@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n;
+    cin>> n;
+    
+    vector<tuple<int,int,string>>ageName;
+    
+    int order,age;
+    string name;
+    
+    for(int i=0;i<n;i++){
+       cin>>age>>name;
+       order=i+1;
+        ageName.push_back({order,age,name});
+    }
+    
+    sort(ageName.begin(),ageName.end(),[](auto a,auto b){
+        if(get<1>(a)==get<1>(b)) return get<0>(a)<get<0>(b);
+        return get<1>(a)<get<1>(b);
+    });
+    
+    for(int i=0;i<n;i++){
+        cout<<get<1>(ageName[i])<<" "<<get<2>(ageName[i])<<'\n';
+    }
+    
+    return 0;
+}
