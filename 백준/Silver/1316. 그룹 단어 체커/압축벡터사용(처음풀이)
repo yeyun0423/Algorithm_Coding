@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n;
+    cin >> n;
+    
+    int count=0;
+    
+    for(int i=0;i<n;i++){
+        string s;
+        cin>>s;
+        
+        vector<char>word;
+        char last=0;
+        
+        for(char c: s ){
+           if(c!=last) word.push_back(c);
+            last=c;
+        }
+        
+        bool isExist=false;
+        vector<int>alphabet(26,0);
+        
+        for(int k=0; k<word.size();k++){
+            int idx=word[k]-'a';
+            if(alphabet[idx]){
+                isExist=true;
+                break;
+            }
+            alphabet[idx]=1;
+        }
+       if(!isExist)count++;
+    }
+    cout<<count;
+    return 0;
+}
